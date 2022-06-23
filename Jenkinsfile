@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Counting..'
                 COUNT = sh (
-                    script: 'grep -o -i devops example.txt | wc -l'
+                    script: 'grep -o -i devops example.txt | wc -l',
                     returnStdout: true
                 )
                 echo 'Total number of devops occurence is ${COUNT}'
