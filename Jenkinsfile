@@ -3,12 +3,16 @@ pipeline {
     stages {
         stage('Run Exercise 1') {
             steps {
-                . ./exercise1.sh
+                sh '''
+                    . ./exercise1.sh
+                '''
             }
         }
         stage('Run Exercise 2') {
             steps {
-                . ./exercise2.sh
+                sh '''
+                    . ./exercise2.sh
+                '''
             }
         }
     }
