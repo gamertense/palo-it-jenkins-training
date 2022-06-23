@@ -3,9 +3,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Counting..' && 
-                echo 'Total number of devops occurence is ' &&
-                grep -o -i devops example.txt | wc -l
+                sh '''
+                    echo 'Counting..' && 
+                    echo 'Total number of devops occurence is ' &&
+                    grep -o -i devops example.txt | wc -l
+                '''
             }
         }
         stage('Test') {
