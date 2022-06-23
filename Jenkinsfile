@@ -4,7 +4,6 @@ pipeline {
         stage('Run Exercise 1') {
             steps {
                 sh '''
-                    chmod +x ./exercise1.sh
                     ./exercise1.sh
                 '''
             }
@@ -12,7 +11,6 @@ pipeline {
         stage('Run Exercise 2') {
             steps {
                 sh '''
-                    chmod +x ./exercise2.sh
                     ./exercise2.sh
                 '''
             }
