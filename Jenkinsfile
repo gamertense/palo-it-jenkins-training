@@ -1,20 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Run Exercise 1') {
             steps {
-                sh "chmod +x ./build.sh"
-                sh './build.sh'
+                . ./exercise1.sh
             }
         }
-        stage('Test') {
+        stage('Run Exercise 2') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                . ./exercise2.sh
             }
         }
     }
