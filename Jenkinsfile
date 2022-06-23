@@ -4,18 +4,21 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Counting..'
-                script {
-                    echo 'Total number of devops occurence is '
+                COUNT = sh (
                     grep -o -i devops example.txt | wc -l
-                }
+                    returnStdout: true
+                )
+                echo 'Total number of devops occurence is ${COUNT}'
+
                 echo 'Replacing...'
-                script {
+                sh '''
                     sed 's/devops/hello_world/g' example.txt > replaced_example.txt
                     FILE=./replaced_example.txt
                     if test -f "$FILE"; then
                         echo "$FILE exists."
                     fi
-                }
+                '''
+                echo 'String replacement done'
             }
         }
         stage('Test') {
