@@ -12,7 +12,7 @@ pipeline {
         stage('Run Exercise 2') {
             steps {
                 sh '''
-                    chmod +x ./exercise1.sh
+                    chmod +x ./exercise2.sh
                     ./exercise2.sh
                 '''
             }
